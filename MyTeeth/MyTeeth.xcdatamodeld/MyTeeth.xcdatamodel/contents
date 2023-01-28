@@ -4,9 +4,11 @@
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="info" optional="YES" attributeType="String"/>
         <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="myTeeth" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MyTeeth" inverseName="history" inverseEntity="MyTeeth"/>
     </entity>
     <entity name="MyTeeth" representedClassName="MyTeeth" syncable="YES" codeGenerationType="class">
         <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="status" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="history" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="History" inverseName="myTeeth" inverseEntity="History"/>
     </entity>
 </model>
